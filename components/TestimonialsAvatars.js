@@ -63,8 +63,7 @@ const TestimonialsAvatars = ({ priority = false }) => {
         </div>
 
         <div className="text-base text-white">
-          <span className="font-semibold">32</span> makers
-          ship faster
+          <span className="font-semibold">100</span> members of WZRD
         </div>
       </div>
     </div>

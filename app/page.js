@@ -8,6 +8,8 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/Testimonials1";
+import FeaturesListicle from "@/components/FeaturesListicle";
+import Solutions from "@/components/Solution";
 
 export default function Page() {
   return (
@@ -18,10 +20,10 @@ export default function Page() {
       <main>
         <Hero />
         <Problem />
-        <FeaturesAccordion />
+        <Solutions />
         <Pricing />
-        <FAQ />
         <CTA />
+        <FAQ />
         <Testimonial />
       </main>
       <Footer />

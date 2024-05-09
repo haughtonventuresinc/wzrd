@@ -31,7 +31,7 @@ const Hero = () => {
             optimize your trading decisions and stay ahead of the market.
           </p>
           <button className="btn btn-primary btn-wide">
-            Get {config.appName}
+            Join {config.appName}
           </button>
 
           <TestimonialsAvatars priority={true} />
