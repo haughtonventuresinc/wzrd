@@ -37,7 +37,7 @@ const Header = () => {
   }, [searchParams]);
 
   return (
-    <header className="bg-base-200">
+    <header className="bg-black text-white">
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"
@@ -52,11 +52,11 @@ const Header = () => {
             <Image
               src={logo}
               alt={`${config.appName} logo`}
-              className="w-8"
+              className="w-12"
               placeholder="blur"
               priority={true}
-              width={32}
-              height={32}
+              width={42}
+              height={42}
             />
             <span className="font-extrabold text-lg">{config.appName}</span>
           </Link>
@@ -119,11 +119,11 @@ const Header = () => {
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
-                className="w-8"
+                className="w-12"
                 placeholder="blur"
                 priority={true}
-                width={32}
-                height={32}
+                width={60}
+                height={60}
               />
               <span className="font-extrabold text-lg">{config.appName}</span>
             </Link>

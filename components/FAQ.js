@@ -7,22 +7,98 @@ import { useRef, useState } from "react";
 
 const faqList = [
   {
-    question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
-  },
-  {
-    question: "Can I get a refund?",
+    question: "What does WZRD offer?",
     answer: (
-      <p>
-        Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
-      </p>
+      <div className="space-y-2 leading-relaxed">
+        WZRD offers cutting-edge predictive analytics for day traders, focusing
+        on the SPX and SPY indices. Our platform provides daily market
+        directions, price targets, and real-time alerts using our proprietary
+        algorithm, helping traders make informed decisions quickly.
+      </div>
     ),
   },
   {
-    question: "I have another question",
+    question: "How do I use WZRD services?",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, contact us by email</div>
+      <div className="space-y-2 leading-relaxed">
+        After signing up and choosing your subscription plan, you’ll gain access
+        to our user dashboard. Every trading day, before the market opens, we’ll
+        provide clear market directions and price targets. You’ll receive alerts
+        on significant market movements, accessible directly through our
+        platform.
+      </div>
+    ),
+  },
+  {
+    question: "What markets do you cover?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Currently, WZRD specializes in the SPX and SPY indices. These indices
+        provide a dynamic trading environment, and our service is designed to
+        capitalize on this by offering precise predictions and analyses.
+      </div>
+    ),
+  },
+  {
+    question: "How much does it cost to subscribe to WZRD?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        WZRD offers several subscription plans tailored to different trading
+        needs. Our standard plan starts at $200 per month. For more detailed
+        information, please visit our Pricing page.
+      </div>
+    ),
+  },
+  {
+    question: "What makes WZRD different from other trading tools?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        WZRD sets itself apart by providing not just data, but processed,
+        actionable insights tailored to day trading SPX and SPY. Our algorithms
+        are backed by rigorous data science and are continuously updated to
+        adapt to market conditions.
+      </div>
+    ),
+  },
+  {
+    question: "How accurate are your predictions?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        While no predictive tool can guarantee absolute accuracy, WZRD strives
+        to maintain the highest standards of data integrity and analytical
+        precision. Our historical performance and ongoing improvements aim to
+        provide reliability and trust in our predictions.
+      </div>
+    ),
+  },
+  {
+    question: "Can I cancel my subscription at any time?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Yes, you can cancel your subscription at any time through your account
+        settings. There are no cancellation fees, though we do not offer refunds
+        for any remaining time in your subscription period.
+      </div>
+    ),
+  },
+  {
+    question: "How can I contact customer support?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Our dedicated customer support team can be reached via email at 
+        <a href="mailto:support@wzrd.com" className="text-blue-600"> support@wzrd.com</a> or through our
+        website’s contact form. We strive to respond to all inquiries within 24
+        hours.
+      </div>
+    ),
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        WZRD accepts payments via major credit cards and PayPal. All payments
+        are securely processed on our platform.
+      </div>
     ),
   },
 ];
@@ -42,7 +118,7 @@ const Item = ({ item }) => {
         aria-expanded={isOpen}
       >
         <span
-          className={`flex-1 text-base-content ${isOpen ? "text-primary" : ""}`}
+          className={`flex-1 text-white ${isOpen ? "text-primary" : ""}`}
         >
           {item?.question}
         </span>
@@ -89,16 +165,16 @@ const Item = ({ item }) => {
 
 const FAQ = () => {
   return (
-    <section className="bg-base-200" id="faq">
+    <section className="bg-black text-white-400" id="faq">
       <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
-          <p className="inline-block font-semibold text-primary mb-4">FAQ</p>
-          <p className="sm:text-4xl text-3xl font-extrabold text-base-content">
-            Frequently Asked Questions
+          <p className="inline-block font-semibold text-white mb-4">FAQ</p>
+          <p className="sm:text-4xl text-3xl font-extrabold text-white">
+            Frequently Asked Questions for WZRD
           </p>
         </div>
 
-        <ul className="basis-1/2">
+        <ul className="basis-1/2 text-white">
           {faqList.map((item, i) => (
             <Item key={i} item={item} />
           ))}
