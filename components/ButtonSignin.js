@@ -48,8 +48,8 @@ const ButtonSignin = ({ text = "Get started", extraStyle }) => {
 
   return (
     <button
-      className={`btn bg-[#2B3440] btn-wide text-white hover:text-black `}
-      onClick={handleClick}
+      className={`btn bg-black text-white hover:text-black `}
+      // onClick={handleClick}
     >
       {text}
     </button>

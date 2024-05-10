@@ -8,7 +8,7 @@ import logo from "@/app/icon.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-base-content/10 text-white">
+    <footer className="bg-white border-t border-base-content/10 text-black">
       <div className="max-w-7xl mx-auto px-8 py-24">
         <div className=" flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -30,16 +30,16 @@ const Footer = () => {
               </strong>
             </Link>
 
-            <p className="mt-3 text-sm text-white">
+            <p className="mt-3 text-sm text-black">
               {config.appDescription}
             </p>
-            <p className="mt-3 text-sm text-white">
+            <p className="mt-3 text-sm text-black">
               Copyright © {new Date().getFullYear()} - All rights reserved
             </p>
           </div>
           <div className="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-white tracking-widest text-sm md:text-left mb-3">
+              <div className="footer-title font-semibold text-black tracking-widest text-sm md:text-left mb-3">
                 LINKS
               </div>
 
@@ -67,7 +67,7 @@ const Footer = () => {
             </div>
 
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-white tracking-widest text-sm md:text-left mb-3">
+              <div className="footer-title font-semibold text-black tracking-widest text-sm md:text-left mb-3">
                 LEGAL
               </div>
 

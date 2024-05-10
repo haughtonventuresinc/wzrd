@@ -49,12 +49,12 @@ const refTypes = {
 const list = [
   {
     name: "Alex Turner",
-    text: "“I’ve been trading for over a decade, and WZRD is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
+    text: "“I’ve been trading for over a decade, and Index wizard is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
     type: refTypes.twitter,
   },
   {
     name: "Samantha Brie",
-    text: "“I’m new to WZRD, but I’ve already seen impressive returns in just a few days. Thank you for making trading this accessible and profitable!”",
+    text: "“I’m new to Index wizard, but I’ve already seen impressive returns in just a few days. Thank you for making trading this accessible and profitable!”",
     type: refTypes.twitter,
   },
   {
@@ -64,17 +64,17 @@ const list = [
   },
   {
     name: "David Kim",
-    text: "“I’ve been trading for over a decade, and WZRD is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
+    text: "“I’ve been trading for over a decade, and Index wizard is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
     type: refTypes.twitter,
   },
   {
     name: "Elena Gomez",
-    text: "“Being part of WZRD has been an enlightening experience. It’s my fourth month, and the consistency of the results is what keeps me confident in every trade.”",
+    text: "“Being part of Index wizard has been an enlightening experience. It’s my fourth month, and the consistency of the results is what keeps me confident in every trade.”",
     type: refTypes.twitter,
   },
   {
     name: "Tommy Lee",
-    text: "“After cycling through countless trading services, WZRD stands out with its reliability and straightforward results. It’s refreshing to see a service that lives up to its promises.”",
+    text: "“After cycling through countless trading services, Index wizard stands out with its reliability and straightforward results. It’s refreshing to see a service that lives up to its promises.”",
     type: refTypes.twitter,
   },
   {
@@ -84,47 +84,47 @@ const list = [
   },
   {
     name: "Sophia Clark",
-    text: " “I’ve been with WZRD since its early days and watched it grow into a powerhouse. This service has not only increased my portfolio but also my understanding of market dynamics.”",
+    text: " “I’ve been with Index wizard since its early days and watched it grow into a powerhouse. This service has not only increased my portfolio but also my understanding of market dynamics.”",
     type: refTypes.twitter,
   },
   {
     name: "Lucas Grant",
-    text: "“Your transparency and integrity are why I recommend WZRD to every trader I meet. It’s refreshing to see honesty in this field.”",
+    text: "“Your transparency and integrity are why I recommend Index wizard to every trader I meet. It’s refreshing to see honesty in this field.”",
     type: refTypes.twitter,
   },
   {
     name: "Mia Zhang",
-    text: "“In just a few months, WZRD has helped me achieve gains I didn’t think were possible. This is the best trading decision I’ve ever made.”",
+    text: "“In just a few months, Index wizard has helped me achieve gains I didn’t think were possible. This is the best trading decision I’ve ever made.”",
     type: refTypes.twitter,
   },
   {
     name: "Chloe Brooks",
-    text: "“Absolutely stellar! WZRD’s predictions are incredibly precise. They’ve been crucial in helping me make fast, profitable decisions.”",
+    text: "“Absolutely stellar! Index wizard’s predictions are incredibly precise. They’ve been crucial in helping me make fast, profitable decisions.”",
     type: refTypes.twitter,
   },
   {
     name: "Mark Daniels",
-    text: "“I’ve tried many services, but none match the profitability and ease of use that WZRD offers. It’s been a fantastic journey learning and earning with you.”",
+    text: "“I’ve tried many services, but none match the profitability and ease of use that Index wizard offers. It’s been a fantastic journey learning and earning with you.”",
     type: refTypes.twitter,
   },
   {
     name: "Richard Miles",
-    text: "“WZRD’s service is top-notch! The team is always responsive and willing to help, which makes all the difference.”",
+    text: "“Index wizard’s service is top-notch! The team is always responsive and willing to help, which makes all the difference.”",
     type: refTypes.twitter,
   },
   {
     name: "Jordan Fisher",
-    text: "“The daily strategies and updates WZRD provides have helped me make more in a month than I used to in a year. This service is a game-changer.”",
+    text: "“The daily strategies and updates Index wizard provides have helped me make more in a month than I used to in a year. This service is a game-changer.”",
     type: refTypes.twitter,
   },
   {
     name: "Grace Lin",
-    text: "“Each morning, I look forward to WZRD’s market outlook. Their insights are spot-on and instrumental for profitable trades.”",
+    text: "“Each morning, I look forward to Index wizard’s market outlook. Their insights are spot-on and instrumental for profitable trades.”",
     type: refTypes.twitter,
   },
   {
     name: "Ethan Moore",
-    text: "“WZRD is straightforward and effective. I appreciate the focus on real results and practical trading strategies.”",
+    text: "“Index wizard is straightforward and effective. I appreciate the focus on real results and practical trading strategies.”",
     type: refTypes.twitter,
   },
   {
@@ -134,12 +134,12 @@ const list = [
   },
   {
     name: "Liam Johnson",
-    text: "“From the accurate daily forecasts to the detailed trading strategies, WZRD has exceeded all my expectations.”",
+    text: "“From the accurate daily forecasts to the detailed trading strategies, Index wizard has exceeded all my expectations.”",
     type: refTypes.twitter,
   },
   {
     name: "Emily White",
-    text: "“I used to be overwhelmed by trading SPX and SPY, but WZRD’s clear and concise guidance has made all the difference. I’m not just trading; I’m growing my portfolio strategically thanks to your team.”",
+    text: "“I used to be overwhelmed by trading SPX and SPY, but Index wizard’s clear and concise guidance has made all the difference. I’m not just trading; I’m growing my portfolio strategically thanks to your team.”",
     type: refTypes.twitter,
   },
 ];

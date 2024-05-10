@@ -7,10 +7,10 @@ import ButtonCheckout from "./ButtonCheckout";
 
 const Pricing = () => {
   return (
-    <section className="bg-black overflow-hidden" id="pricing">
+    <section className="bg-white overflow-hidden" id="pricing">
       <div className="py-24 px-8 max-w-5xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <p className="font-bold text-3xl lg:text-5xl text-white mb-8">
+          <p className="font-bold text-3xl lg:text-5xl text-black mb-8">
             Pricing
           </p>
           {/* <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
@@ -37,12 +37,12 @@ const Pricing = () => {
                 ></div>
               )}
 
-              <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-[#2B3440] text-white p-8 rounded-lg">
+              <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-white text-black border p-8 rounded-lg">
                 <div className="flex justify-between items-center gap-4 ">
                   <div>
                     <p className="text-lg lg:text-xl font-bold">{plan.name}</p>
                     {plan.description && (
-                      <p className="text-white mt-2">{plan.description}</p>
+                      <p className="text-black mt-2">{plan.description}</p>
                     )}
                   </div>
                 </div>
@@ -50,8 +50,8 @@ const Pricing = () => {
                   {plan.priceAnchor && (
                     <div className="flex flex-col justify-end mb-[4px] text-lg ">
                       <p className="relative">
-                        <span className="absolute bg-white h-[1.5px] inset-x-0 top-[53%]"></span>
-                        <span className="text-white">${plan.priceAnchor}</span>
+                        <span className="absolute bg-black h-[1.5px] inset-x-0 top-[53%]"></span>
+                        <span className="text-black">${plan.priceAnchor}</span>
                       </p>
                     </div>
                   )}
@@ -59,7 +59,7 @@ const Pricing = () => {
                     ${plan.price}
                   </p>
                   <div className="flex flex-col justify-end mb-[4px]">
-                    <p className="text-xs text-white uppercase font-semibold">
+                    <p className="text-xs text-black uppercase font-semibold">
                       USD
                     </p>
                   </div>
@@ -89,7 +89,7 @@ const Pricing = () => {
                 <div className="space-y-2">
                   <ButtonCheckout priceId={plan.priceId} />
 
-                  <p className="flex items-center justify-center gap-2 text-sm text-center text-white font-medium relative">
+                  <p className="flex items-center justify-center gap-2 text-sm text-center text-black font-medium relative">
                     Montly Charges
                   </p>
                 </div>

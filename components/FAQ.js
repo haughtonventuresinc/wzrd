@@ -7,18 +7,18 @@ import { useRef, useState } from "react";
 
 const faqList = [
   {
-    question: "What does WZRD offer?",
+    question: "What does Index wizard offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        WZRD offers cutting-edge predictive analytics for day traders, focusing
-        on the SPX and SPY indices. Our platform provides daily market
+        Index wizard offers cutting-edge predictive analytics for day traders,
+        focusing on the SPX and SPY indices. Our platform provides daily market
         directions, price targets, and real-time alerts using our proprietary
         algorithm, helping traders make informed decisions quickly.
       </div>
     ),
   },
   {
-    question: "How do I use WZRD services?",
+    question: "How do I use Index wizard services?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         After signing up and choosing your subscription plan, you’ll gain access
@@ -33,30 +33,31 @@ const faqList = [
     question: "What markets do you cover?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        Currently, WZRD specializes in the SPX and SPY indices. These indices
-        provide a dynamic trading environment, and our service is designed to
-        capitalize on this by offering precise predictions and analyses.
+        Currently, Index wizard specializes in the SPX and SPY indices. These
+        indices provide a dynamic trading environment, and our service is
+        designed to capitalize on this by offering precise predictions and
+        analyses.
       </div>
     ),
   },
   {
-    question: "How much does it cost to subscribe to WZRD?",
+    question: "How much does it cost to subscribe to Index wizard?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        WZRD offers several subscription plans tailored to different trading
-        needs. Our standard plan starts at $200 per month. For more detailed
-        information, please visit our Pricing page.
+        Index wizard offers several subscription plans tailored to different
+        trading needs. Our standard plan starts at $200 per month. For more
+        detailed information, please visit our Pricing page.
       </div>
     ),
   },
   {
-    question: "What makes WZRD different from other trading tools?",
+    question: "What makes Index wizard different from other trading tools?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        WZRD sets itself apart by providing not just data, but processed,
-        actionable insights tailored to day trading SPX and SPY. Our algorithms
-        are backed by rigorous data science and are continuously updated to
-        adapt to market conditions.
+        Index wizard sets itself apart by providing not just data, but
+        processed, actionable insights tailored to day trading SPX and SPY. Our
+        algorithms are backed by rigorous data science and are continuously
+        updated to adapt to market conditions.
       </div>
     ),
   },
@@ -64,10 +65,10 @@ const faqList = [
     question: "How accurate are your predictions?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        While no predictive tool can guarantee absolute accuracy, WZRD strives
-        to maintain the highest standards of data integrity and analytical
-        precision. Our historical performance and ongoing improvements aim to
-        provide reliability and trust in our predictions.
+        While no predictive tool can guarantee absolute accuracy, Index wizard
+        strives to maintain the highest standards of data integrity and
+        analytical precision. Our historical performance and ongoing
+        improvements aim to provide reliability and trust in our predictions.
       </div>
     ),
   },
@@ -85,10 +86,13 @@ const faqList = [
     question: "How can I contact customer support?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        Our dedicated customer support team can be reached via email at 
-        <a href="mailto:support@wzrd.com" className="text-blue-600"> support@wzrd.com</a> or through our
-        website’s contact form. We strive to respond to all inquiries within 24
-        hours.
+        Our dedicated customer support team can be reached via email at
+        <a href="mailto:support@Index wizard.com" className="text-blue-600">
+          {" "}
+          support@Index wizard.com
+        </a>{" "}
+        or through our website’s contact form. We strive to respond to all
+        inquiries within 24 hours.
       </div>
     ),
   },
@@ -96,8 +100,8 @@ const faqList = [
     question: "What payment methods do you accept?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        WZRD accepts payments via major credit cards and PayPal. All payments
-        are securely processed on our platform.
+        Index wizard accepts payments via major credit cards and PayPal. All
+        payments are securely processed on our platform.
       </div>
     ),
   },
@@ -117,9 +121,7 @@ const Item = ({ item }) => {
         }}
         aria-expanded={isOpen}
       >
-        <span
-          className={`flex-1 text-white ${isOpen ? "text-primary" : ""}`}
-        >
+        <span className={`flex-1 text-white ${isOpen ? "text-primary" : ""}`}>
           {item?.question}
         </span>
         <svg
@@ -170,7 +172,7 @@ const FAQ = () => {
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-white mb-4">FAQ</p>
           <p className="sm:text-4xl text-3xl font-extrabold text-white">
-            Frequently Asked Questions for WZRD
+            Frequently Asked Questions for Index wizard
           </p>
         </div>
 

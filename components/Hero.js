@@ -26,11 +26,12 @@ const Hero = () => {
             Trade smarter, faster <br /> - beat the market daily
           </h1>
           <p className="text-lg opacity-80 leading-relaxed">
-            WZRD delivers real-time trading insights for SPX and SPY, tailored
-            to day traders. From setup to strategy execution in minutes,
-            optimize your trading decisions and stay ahead of the market.
+            Index wizard delivers real-time trading insights for SPX and SPY,
+            tailored to day traders. From setup to strategy execution in
+            minutes, optimize your trading decisions and stay ahead of the
+            market.
           </p>
-          <button className="btn bg-[#2B3440] btn-wide text-white hover:text-black">
+          <button className="btn bg-black btn-wide text-white hover:text-black">
             Join {config.appName}
           </button>
 

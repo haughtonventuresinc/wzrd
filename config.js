@@ -5,7 +5,7 @@ const config = {
   appName: "Index Wizard",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "WZRD delivers real-time trading insights for SPX and SPY, tailored to day traders. From setup to strategy execution in minutes, optimize your trading decisions and stay ahead of the market.",
+    "Index wizard delivers real-time trading insights for SPX and SPY, tailored to day traders. From setup to strategy execution in minutes, optimize your trading decisions and stay ahead of the market.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "shipfa.st",
   crisp: {
