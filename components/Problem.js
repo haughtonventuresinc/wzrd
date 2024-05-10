@@ -33,7 +33,7 @@ const Step = ({ emoji, text }) => {
 
 const Problem = () => {
   return (
-    <section className="bg-neutral text-neutral-content">
+    <section className="bg-black text-neutral-content">
       <div className="max-w-7xl mx-auto py-16 md:py-32 text-center">
         <h2 className="max-w-5xl mx-auto font-extrabold text-4xl md:text-5xl mb-6 md:mb-8">
           80% of day traders struggle to achieve consistent profitability due to

@@ -1,10 +1,6 @@
-import alarm from "@/app/alarm.png";
-import analytics from "@/app/analytics.png";
-import gpt from "@/app/gpt.png";
-
 const Solution = ({ title, description, svgPath }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center gap-4 md:w-80">
+    <div className="bg-[#F2F2F2] rounded-lg shadow-md p-6 flex flex-col items-center justify-center gap-4 md:w-80">
       <img src={svgPath} alt="SVG" className="w-12 h-12 mb-4" />
       <h3 className="font-bold text-lg md:text-lg text-black">{title}</h3>
       <p className="text-sm text-black">{description}</p>

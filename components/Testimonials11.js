@@ -48,89 +48,99 @@ const refTypes = {
 // The list of your testimonials. It needs 11 items to fill the grid. The last one (11th) is featured on large devices (span 2 columns + big font)
 const list = [
   {
-    // Optional, use for social media like Twitter. Does not link anywhere but cool to display
-    username: "marclou",
-    // REQUIRED
-    name: "Marc Lou",
-    // REQUIRED
-    text: "Really easy to use. The tutorials are really useful and explains how everything works. Hope to ship my next project really fast!",
-    // REQUIRED — use refTypes.other if you don't want to display an icon
-    type: refTypes.twitter,
-    // Optional, link to the person's testimonial. It's more trustable
-    link: "https://twitter.com/marc_louvion",
-    // Optional, a statically imported image (usually from your public folder—recommended) or a link to the person's avatar. Shows a fallback letter if not provided
-    img: "https://pbs.twimg.com/profile_images/1514863683574599681/9k7PqDTA_400x400.jpg",
-    // You can display video testimonials to build more trust. Just swap the type above to "video" and add at least the video source below
-    // videoSrc: "/jack.mp4"
-  },
-  {
-    username: "the_mcnaveen",
-    name: "Naveen",
-    text: "Setting up everything from the ground up is a really hard, and time consuming process. What you pay for will save your time for sure.",
-    type: refTypes.twitter,
-    link: "https://twitter.com/the_mcnaveen",
-  },
-  {
-    username: "wahab",
-    name: "Wahab Shaikh",
-    text: "Easily saves 15+ hrs for me setting up trivial stuff. Now, I can directly focus on shipping features rather than hours of setting up the same technologies from scratch. Feels like a super power! :D",
-    type: refTypes.productHunt,
-    link: "https://www.producthunt.com/products/shipfast-2/reviews?review=667971",
-  },
-  {
-    name: "Sean",
-    text: "Just purchased and cloned and *holy shit!* I realllyyy like what I'm seeing here!",
-    type: refTypes.other,
-  },
-  {
-    username: "krishna",
-    name: "Krishna Kant",
-    text: "Finally a good boilerplate for Nextjs, now I dont have to cry about it comparing with laravel ecosystem.",
-    type: refTypes.productHunt,
-    link: "https://www.producthunt.com/posts/shipfast-2?comment=2707061",
-  },
-  {
-    username: "imgyf",
-    name: "Yifan Goh",
-    text: "It's a game changer  🚀 Comes with easy to follow tutorial, and saves you a ton of time. What's not to love?",
-    type: refTypes.twitter,
-    link: "https://twitter.com/imgyf/status/1697549891080532236?s=20",
-  },
-  {
-    name: "Yazdun",
-    text: "Yo Marc, I got the boilerplate, it's fantastic man you just save me 10 hours on each project",
-    type: refTypes.other,
-  },
-  {
-    name: "Marc Lou",
-    text: "The tool is exactly what I didn't even know I needed.",
-    videoPoster: "https://d1wkquwg5s1b04.cloudfront.net/demo/marcPoster.jpg",
-    videoSrc: "https://d1wkquwg5s1b04.cloudfront.net/demo/marcVideo.mp4",
-    videoHeight: 250,
-    videoWidth: 500,
-    videoType: "video/mp4",
-    type: refTypes.video,
-  },
-  {
-    username: "zawwadx",
-    name: "Zawwad Ul Sami",
-    text: "It's an amazing minimalist, lightweight boilerplate with well-organized code. It has almost all the core features you would want in a SaaS boilerplate. As a new team last year it actually took us months to build a similar set of features at a stable level.",
+    name: "Alex Turner",
+    text: "“I’ve been trading for over a decade, and WZRD is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
     type: refTypes.twitter,
   },
   {
-    username: "dan",
-    name: "Dan Mindru",
-    text: "Probably one of the most powerful things you can 'npm install' that I've seen",
-    type: refTypes.productHunt,
-    link: "https://www.producthunt.com/posts/shipfast-2?comment=2706763",
-  },
-  // The last testimonial is featured on big devices (span 2 columns + big font) 👇
-  {
-    username: "VicPivots",
-    name: "Victor Abeledo",
-    text: "Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well. 100% worth it 🚀🚀🚀",
+    name: "Samantha Brie",
+    text: "“I’m new to WZRD, but I’ve already seen impressive returns in just a few days. Thank you for making trading this accessible and profitable!”",
     type: refTypes.twitter,
-    link: "https://twitter.com/VicPivots/status/1697352442986250413?s=20",
+  },
+  {
+    name: "Michael Chen",
+    text: "“Your daily market forecasts are incredibly accurate. Yesterday, you guys predicted the SPY’s closing and the first target with such precision. Amazing!”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "David Kim",
+    text: "“I’ve been trading for over a decade, and WZRD is genuinely the best service I’ve found. Their approach is no-nonsense and their performance metrics are always transparent. Truly a gem in the trading community.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Elena Gomez",
+    text: "“Being part of WZRD has been an enlightening experience. It’s my fourth month, and the consistency of the results is what keeps me confident in every trade.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Tommy Lee",
+    text: "“After cycling through countless trading services, WZRD stands out with its reliability and straightforward results. It’s refreshing to see a service that lives up to its promises.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Nina Patel",
+    text: " “Thank you for your outstanding service. As a beginner, I feel guided and supported in making trades that actually result in profit.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Sophia Clark",
+    text: " “I’ve been with WZRD since its early days and watched it grow into a powerhouse. This service has not only increased my portfolio but also my understanding of market dynamics.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Lucas Grant",
+    text: "“Your transparency and integrity are why I recommend WZRD to every trader I meet. It’s refreshing to see honesty in this field.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Mia Zhang",
+    text: "“In just a few months, WZRD has helped me achieve gains I didn’t think were possible. This is the best trading decision I’ve ever made.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Chloe Brooks",
+    text: "“Absolutely stellar! WZRD’s predictions are incredibly precise. They’ve been crucial in helping me make fast, profitable decisions.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Mark Daniels",
+    text: "“I’ve tried many services, but none match the profitability and ease of use that WZRD offers. It’s been a fantastic journey learning and earning with you.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Richard Miles",
+    text: "“WZRD’s service is top-notch! The team is always responsive and willing to help, which makes all the difference.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Jordan Fisher",
+    text: "“The daily strategies and updates WZRD provides have helped me make more in a month than I used to in a year. This service is a game-changer.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Grace Lin",
+    text: "“Each morning, I look forward to WZRD’s market outlook. Their insights are spot-on and instrumental for profitable trades.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Ethan Moore",
+    text: "“WZRD is straightforward and effective. I appreciate the focus on real results and practical trading strategies.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Olivia Smith",
+    text: "“Thank you for the exceptional service. Every day I learn something new from your updates, which significantly boosts my trading confidence.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Liam Johnson",
+    text: "“From the accurate daily forecasts to the detailed trading strategies, WZRD has exceeded all my expectations.”",
+    type: refTypes.twitter,
+  },
+  {
+    name: "Emily White",
+    text: "“I used to be overwhelmed by trading SPX and SPY, but WZRD’s clear and concise guidance has made all the difference. I’m not just trading; I’m growing my portfolio strategically thanks to your team.”",
+    type: refTypes.twitter,
   },
 ];
 
@@ -146,11 +156,11 @@ const Testimonial = ({ i }) => {
 
   return (
     <li key={i}>
-      <figure className="relative h-full p-6 bg-base-100 rounded-lg">
+      <figure className="relative h-full p-6 bg-black rounded-lg">
         <blockquote className="relative">
-          <p className="text-sm text-base-content/80">{testimonial.text}</p>
+          <p className="text-sm text-white">{testimonial.text}</p>
         </blockquote>
-        <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-base-content/5">
+        <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-white">
           <div className="overflow-hidden rounded-full bg-base-300 shrink-0">
             {testimonial.img ? (
               <Image
@@ -168,11 +178,11 @@ const Testimonial = ({ i }) => {
           </div>
           <div className="w-full flex items-end justify-between gap-2">
             <div>
-              <div className="text-sm font-medium text-base-content">
+              <div className="text-sm font-medium text-white">
                 {testimonial.name}
               </div>
               {testimonial.username && (
-                <div className="mt-0.5 text-sm text-base-content/80">
+                <div className="mt-0.5 text-sm text-white">
                   @{testimonial.username}
                 </div>
               )}
@@ -333,15 +343,15 @@ const VideoTestimonial = ({ i }) => {
 
 const Testimonials11 = () => {
   return (
-    <section className="bg-base-200" id="testimonials">
+    <section className="bg-[#2B3440]" id="testimonials">
       <div className="py-24 px-8 max-w-7xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <div className="mb-8">
-            <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
-              212 makers are already shipping faster!
+            <h2 className="sm:text-5xl text-4xl font-extrabold text-white">
+              100 members are already <br /> Trading Smarter & Faster!!
             </h2>
           </div>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white">
             Don&apos;t take our word for it. Here&apos;s what they have to say
             about {config.appName}.
           </p>
@@ -363,13 +373,13 @@ const Testimonials11 = () => {
             {/* BIG FEATURED TESTIMONIAL — THE LAST ONE IN THE LIST (11th) */}
             <ul className="col-span-2">
               <li>
-                <figure className="relative h-full p-6 bg-base-100 rounded-lg">
+                <figure className="relative h-full p-6 bg-black rounded-lg">
                   <blockquote className="relative p-4">
-                    <p className="text-lg font-medium text-base-content">
+                    <p className="text-lg font-medium text-white">
                       {list[list.length - 1].text}
                     </p>
                   </blockquote>
-                  <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-base-content/5">
+                  <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-white">
                     <div className="overflow-hidden rounded-full bg-base-300 shrink-0">
                       {list[list.length - 1].img ? (
                         <Image
@@ -388,11 +398,11 @@ const Testimonials11 = () => {
                       )}
                     </div>
                     <div>
-                      <div className="text-base font-medium text-base-content">
+                      <div className="text-base font-medium text-white">
                         {list[list.length - 1].name}
                       </div>
                       {list[list.length - 1].username && (
-                        <div className="mt-1 text-base text-base-content/80">
+                        <div className="mt-1 text-base text-white">
                           @{list[list.length - 1].username}
                         </div>
                       )}

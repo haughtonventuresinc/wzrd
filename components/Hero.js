@@ -4,8 +4,8 @@ import config from "@/config";
 
 const Hero = () => {
   return (
-    <section className="bg-black">
-      <div className="max-w-7xl mx-auto text-white flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
+    <section className="bg-white">
+      <div className="max-w-7xl mx-auto text-black flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
         <div className="flex flex-col gap-10 lg:gap-14 items-center justify-center text-center lg:text-left lg:items-start">
           {/* <a
           href="https://www.producthunt.com/posts/shipfast-2?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-shipfast&#0045;2"
@@ -30,7 +30,7 @@ const Hero = () => {
             to day traders. From setup to strategy execution in minutes,
             optimize your trading decisions and stay ahead of the market.
           </p>
-          <button className="btn btn-primary btn-wide">
+          <button className="btn bg-[#2B3440] btn-wide text-white hover:text-black">
             Join {config.appName}
           </button>
 

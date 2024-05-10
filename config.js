@@ -2,7 +2,7 @@ import themes from "daisyui/src/theming/themes";
 
 const config = {
   // REQUIRED
-  appName: "WZRD",
+  appName: "Index Wizard",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "WZRD delivers real-time trading insights for SPX and SPY, tailored to day traders. From setup to strategy execution in minutes, optimize your trading decisions and stay ahead of the market.",

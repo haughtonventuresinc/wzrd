@@ -32,7 +32,7 @@ const ButtonCheckout = ({ priceId, mode = "payment" }) => {
 
   return (
     <button
-      className="btn btn-primary btn-block group"
+      className="btn bg-black text-white hover:text-[#2B3440] btn-block group"
       onClick={() => handlePayment()}
     >
       {isLoading ? (

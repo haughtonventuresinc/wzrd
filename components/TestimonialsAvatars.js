@@ -62,7 +62,7 @@ const TestimonialsAvatars = ({ priority = false }) => {
           ))}
         </div>
 
-        <div className="text-base text-white">
+        <div className="text-base text-black">
           <span className="font-semibold">100</span> members of WZRD
         </div>
       </div>

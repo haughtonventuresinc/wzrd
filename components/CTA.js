@@ -4,12 +4,9 @@ import config from "@/config";
 
 const FeatureCard = ({ title, description, image }) => {
   return (
-    <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-black">
-      {/* <div className="relative h-64">
-        <Image src={image} alt={title} className="object-cover w-full h-full" />
-      </div> */}
+    <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-black mt-2 mb-2">
       <div className="p-6">
-        <h3 className="font-bold text-xl mb-2">{title}</h3>
+        <h3 className="font-bold text-xl mb-4">{title}</h3>
         <p className="text-white">{description}</p>
       </div>
     </div>
@@ -33,7 +30,7 @@ const CTA = () => {
           </h2>
           <p className="text-xl opacity-80 mb-12 md:mb-16">Included Features</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="flex flex-col md:flex-row flex-wrap justify-around mt-12">
             <FeatureCard
               title="SPX Daily Outlook"
               description="Daily posts minutes after the market opens with our market forecast and trading strategies for SPX and SPY. Detailed trading strategies including specific options to trade, entry limits, profit targets, and stop limits. Historical performance averaging over 480% ROI per month since 2016."
@@ -57,10 +54,6 @@ Insight into expected support and resistance levels throughout the trading day."
               title="Performance Transparency"
               description="Detailed posting of all trade activities—successes and failures.
 Weekly recaps in the SPX Trader’s Blog, explaining daily trading decisions and strategies"
-            />
-            <FeatureCard
-              title="SPX Daily Outlook"
-              description="Daily posts minutes after the market opens with our market forecast and trading strategies for SPX and SPY. Detailed trading strategies including specific options to trade, entry limits, profit targets, and stop limits. Historical performance averaging over 480% ROI per month since 2016."
             />
           </div>
         </div>

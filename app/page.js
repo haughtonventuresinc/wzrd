@@ -10,6 +10,10 @@ import Footer from "@/components/Footer";
 import Testimonial from "@/components/Testimonials1";
 import FeaturesListicle from "@/components/FeaturesListicle";
 import Solutions from "@/components/Solution";
+import Testimonial1Small from "@/components/Testimonial1Small";
+import TestimonialRating from "@/components/TestimonialRating";
+import Testimonials11 from "@/components/Testimonials11";
+import Testimonials3 from "@/components/Testimonials3";
 
 export default function Page() {
   return (
@@ -24,7 +28,7 @@ export default function Page() {
         <Pricing />
         <CTA />
         <FAQ />
-        <Testimonial />
+        <Testimonials11 />
       </main>
       <Footer />
     </>
