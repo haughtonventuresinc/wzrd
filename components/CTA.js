@@ -4,7 +4,7 @@ import config from "@/config";
 
 const FeatureCard = ({ title, description, image }) => {
   return (
-    <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-black mt-2 mb-2">
+    <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-black mt-2 mb-2 md:mb-1  0">
       <div className="p-6">
         <h3 className="font-bold text-xl mb-4">{title}</h3>
         <p className="text-white">{description}</p>
