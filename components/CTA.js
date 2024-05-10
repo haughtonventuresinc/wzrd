@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import config from "@/config";
+import feature from "@/app/feature.gif";
 
 const FeatureCard = ({ title, description, image }) => {
   return (
@@ -17,18 +18,22 @@ const CTA = () => {
   return (
     <section className="relative hero overflow-hidden min-h-screen">
       <Image
-        src="https://images.pexels.com/photos/6045048/pexels-photo-6045048.jpeg?auto=compress&cs=tinysrgb&w=600"
+        src={feature}
         alt="Background"
         className="object-cover w-full"
         fill
       />
-      <div className="relative hero-overlay bg-neutral bg-opacity-70"></div>
+      {/* <video autoPlay loop muted className="object-cover w-full">
+        <source src="path_to_your_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> */}
+      <div className="relative hero-overlay bg-neutral bg-opacity-50"></div>
       <div className="relative hero-content text-center text-neutral-content p-8">
         <div className="max-w-5xl p-8 md:p-0">
-          <h2 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12">
+          <h2 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12 text-white">
             Product Features
           </h2>
-          <p className="text-xl opacity-80 mb-12 md:mb-16">Included Features</p>
+          <p className="text-xl opacity-80 mb-12 md:mb-16 text-white">Included Features</p>
 
           <div className="flex flex-col md:flex-row flex-wrap justify-around mt-12">
             <FeatureCard
