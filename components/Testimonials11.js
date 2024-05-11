@@ -156,11 +156,11 @@ const Testimonial = ({ i }) => {
 
   return (
     <li key={i}>
-      <figure className="relative h-full p-6 bg-black rounded-lg">
+      <figure className="relative h-full p-6 bg-[#F2F2F2] rounded-lg shadow-lg">
         <blockquote className="relative">
-          <p className="text-sm text-white">{testimonial.text}</p>
+          <p className="text-sm text-black">{testimonial.text}</p>
         </blockquote>
-        <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-white">
+        <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-black">
           <div className="overflow-hidden rounded-full bg-base-300 shrink-0">
             {testimonial.img ? (
               <Image
@@ -178,11 +178,11 @@ const Testimonial = ({ i }) => {
           </div>
           <div className="w-full flex items-end justify-between gap-2">
             <div>
-              <div className="text-sm font-medium text-white">
+              <div className="text-sm font-medium text-black">
                 {testimonial.name}
               </div>
               {testimonial.username && (
-                <div className="mt-0.5 text-sm text-white">
+                <div className="mt-0.5 text-sm text-black">
                   @{testimonial.username}
                 </div>
               )}
@@ -343,15 +343,15 @@ const VideoTestimonial = ({ i }) => {
 
 const Testimonials11 = () => {
   return (
-    <section className="bg-[#2B3440]" id="testimonials">
+    <section className="bg-white" id="testimonials">
       <div className="py-24 px-8 max-w-7xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <div className="mb-8">
-            <h2 className="sm:text-5xl text-4xl font-extrabold text-white">
+            <h2 className="sm:text-5xl text-4xl font-extrabold text-black">
               100 members are already <br /> Trading Smarter & Faster!!
             </h2>
           </div>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-black">
             Don&apos;t take our word for it. Here&apos;s what they have to say
             about {config.appName}.
           </p>
@@ -373,13 +373,13 @@ const Testimonials11 = () => {
             {/* BIG FEATURED TESTIMONIAL — THE LAST ONE IN THE LIST (11th) */}
             <ul className="col-span-2">
               <li>
-                <figure className="relative h-full p-6 bg-black rounded-lg">
+                <figure className="relative h-full p-6 bg-[#F2F2F2] rounded-lg shadow-lg">
                   <blockquote className="relative p-4">
-                    <p className="text-lg font-medium text-white">
+                    <p className="text-lg font-medium text-black">
                       {list[list.length - 1].text}
                     </p>
                   </blockquote>
-                  <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-white">
+                  <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-black">
                     <div className="overflow-hidden rounded-full bg-base-300 shrink-0">
                       {list[list.length - 1].img ? (
                         <Image
@@ -398,11 +398,11 @@ const Testimonials11 = () => {
                       )}
                     </div>
                     <div>
-                      <div className="text-base font-medium text-white">
+                      <div className="text-base font-medium text-black">
                         {list[list.length - 1].name}
                       </div>
                       {list[list.length - 1].username && (
-                        <div className="mt-1 text-base text-white">
+                        <div className="mt-1 text-base text-black">
                           @{list[list.length - 1].username}
                         </div>
                       )}

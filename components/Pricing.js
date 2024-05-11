@@ -90,7 +90,7 @@ const Pricing = () => {
                   <ButtonCheckout priceId={plan.priceId} />
 
                   <p className="flex items-center justify-center gap-2 text-sm text-center text-black font-medium relative">
-                    Montly Charges
+                    Monthly Charges
                   </p>
                 </div>
               </div>

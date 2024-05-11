@@ -48,7 +48,7 @@ const config = {
             ? "price_1O5KtcAxyNprDp7iftKnrrpw"
             : "price_456",
         name: "Advanced Plan",
-        description: "You need more power",
+        description: "Premium Member",
         price: 189,
         priceAnchor: 250,
         features: [

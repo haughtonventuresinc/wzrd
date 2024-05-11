@@ -172,7 +172,7 @@ const FAQ = () => {
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-white mb-4">FAQ</p>
           <p className="sm:text-4xl text-3xl font-extrabold text-white">
-            Frequently Asked Questions for Index wizard
+            Frequently Asked Questions  
           </p>
         </div>
 

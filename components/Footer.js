@@ -21,7 +21,7 @@ const Footer = () => {
                 src={logo}
                 alt={`${config.appName} logo`}
                 priority={true}
-                className="w-12 h-12"
+                className="w-12 h-12 bg-black rounded"
                 width={34}
                 height={34}
               />
