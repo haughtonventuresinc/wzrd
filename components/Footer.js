@@ -30,9 +30,7 @@ const Footer = () => {
               </strong>
             </Link>
 
-            <p className="mt-3 text-sm text-black">
-              {config.appDescription}
-            </p>
+            <p className="mt-3 text-sm text-black">{config.appDescription}</p>
             <p className="mt-3 text-sm text-black">
               Copyright © {new Date().getFullYear()} - All rights reserved
             </p>

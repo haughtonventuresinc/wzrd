@@ -10,7 +10,7 @@ const Solution = ({ title, description, svgPath }) => {
 
 const Solutions = () => {
   return (
-    <section className="bg-[#F2F2F2] text-black">
+    <section className="bg-white text-black">
       <div className="max-w-7xl mx-auto px-8 py-16 md:py-32 text-center">
         <h2 className="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
           All you need to turn market insights into profitable trades quickly

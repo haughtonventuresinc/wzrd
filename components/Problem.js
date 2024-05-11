@@ -26,21 +26,21 @@ const Step = ({ emoji, text }) => {
   return (
     <div className="w-full md:w-48 flex flex-col gap-2 items-center justify-center">
       <span className="text-4xl">{emoji}</span>
-      <h3 className="font-bold">{text}</h3>
+      <h3 className="font-bold text-white">{text}</h3>
     </div>
   );
 };
 
 const Problem = () => {
   return (
-    <section className="bg-black text-neutral-content">
+    <section className="bg-black text-white">
       <div className="max-w-7xl mx-auto py-16 md:py-32 text-center">
-        <h2 className="max-w-5xl mx-auto font-extrabold text-4xl md:text-5xl mb-6 md:mb-8">
+        <h2 className="max-w-5xl mx-auto font-extrabold text-white text-4xl md:text-5xl mb-6 md:mb-8">
           80% of day traders struggle to achieve consistent profitability due to
           ineffective market analysis. Charts, data streams, complex
           indicators... There’s an overload of information.
         </h2>
-        <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-12 md:mb-20">
+        <p className="max-w-xl mx-auto text-lg text-white leading-relaxed mb-12 md:mb-20">
           Hours analyzing trends, struggle to make timely decisions, miss profit
           opportunities.
         </p>
