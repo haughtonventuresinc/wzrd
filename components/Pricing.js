@@ -1,11 +1,36 @@
+"use client";
+
 import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
+import { useState, useEffect } from "react";
+import { PayPalButton } from "react-paypal-button-v2";
 
 // <Pricing/> displays the pricing plans for your app
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
 // <ButtonCheckout /> renders a button that will redirect the user to Stripe checkout called the /api/stripe/create-checkout API endpoint with the correct priceId
 
 const Pricing = () => {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  const addPaypalScript = () => {
+    if (window.paypal) {
+      setScriptLoaded(true);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src =
+      "https://www.paypal.com/sdk/js?client-id=Ac_Y6w5AyvIjDM7uTK2ksmdQ4nuYHJEgTY4xjI91I8wv-3zKPkmhcPE2MkmXd7okZzxCeJkrUiS3Jt68";
+    script.type = "text/javascript";
+    script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    document.body.appendChild(script);
+  };
+
+  useEffect(() => {
+    addPaypalScript();
+  }, []);
+
   return (
     <section className="bg-white overflow-hidden" id="pricing">
       <div className="py-24 px-8 max-w-5xl mx-auto">
@@ -87,8 +112,28 @@ const Pricing = () => {
                   </ul>
                 )}
                 <div className="space-y-2">
-                  <ButtonCheckout priceId={plan.priceId} />
+                  {/* <ButtonCheckout priceId={plan.priceId} /> */}
+                  {console.log("paypal loaded>>>>>>>>>>")}
+                  {scriptLoaded ? (
+                    <PayPalButton
+                      amount={plan.price}
+                      onSuccess={(details) => {
+                        alert(
+                          "Transaction completed by " +
+                            details.payer.name.given_name
+                        );
 
+                        //    return fetch("/paypal-transaction-complete", {
+                        //      method: "post",
+                        //      body: JSON.stringify({
+                        //        orderID: data.orderID,
+                        //      }),
+                        //    });
+                      }}
+                    />
+                  ) : (
+                    <span>Loading....</span>
+                  )}
                   <p className="flex items-center justify-center gap-2 text-sm text-center text-black font-medium relative">
                     Monthly Charges
                   </p>

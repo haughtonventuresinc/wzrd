@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import Solutions from "@/components/Solution";
 import Testimonials11 from "@/components/Testimonials11";
 
+// const initialOptions = {
+//   clientId:
+//     "Ac_Y6w5AyvIjDM7uTK2ksmdQ4nuYHJEgTY4xjI91I8wv-3zKPkmhcPE2MkmXd7okZzxCeJkrUiS3Jt68",
+//   currency: "USD",
+//   intent: "capture",
+// };
+
 export default function Page() {
   return (
     <>
@@ -19,7 +26,10 @@ export default function Page() {
         <Hero />
         <Problem />
         <Solutions />
-        <Pricing />
+        {/* <PayPalScriptProvider options={initialOptions}> */}
+          <Pricing />
+          {/* <PayPalButtons /> */}
+        {/* </PayPalScriptProvider> */}
         <CTA />
         <FAQ />
         <Testimonials11 />

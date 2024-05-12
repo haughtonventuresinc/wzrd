@@ -13,13 +13,15 @@ const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
     >
       <div className="pl-4 md:pl-10 pt-5">
         {/* Only show the toggle button on small screens */}
-        <button
-          onClick={toggleSidebar}
-          className="md:hidden text-2xl"
-          aria-label="Toggle Sidebar"
-        >
-          &#8801;
-        </button>
+        <div className="ml-[80%]">
+          <button
+            onClick={toggleSidebar}
+            className="md:hidden text-2xl border rounded-lg px-2"
+            aria-label="Toggle Sidebar"
+          >
+            x
+          </button>
+        </div>
         <Link
           className="flex items-center gap-2 shrink-0 "
           href="/dashboard"

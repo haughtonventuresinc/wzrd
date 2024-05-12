@@ -12,6 +12,7 @@
   "dependencies": {
     "@auth/mongodb-adapter": "^1.0.0",
     "@headlessui/react": "^1.7.18",
+    "@paypal/react-paypal-js": "^8.3.0",
     "axios": "^1.6.8",
     "crisp-sdk-web": "^1.0.22",
     "eslint": "8.47.0",
@@ -29,6 +30,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
+    "react-paypal-button-v2": "^2.6.3",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^5.26.3",
     "stripe": "^13.11.0"
