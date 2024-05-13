@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Use this if you want to make a call to OpenAI GPT-4 for instance. userId is used to identify the user on openAI side.
 export const sendOpenAi = async (messages, max = 100, temp = 1) => {
   const url = "https://api.openai.com/v1/chat/completions";
 
@@ -18,7 +17,7 @@ export const sendOpenAi = async (messages, max = 100, temp = 1) => {
 
   const options = {
     headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer sk-proj-M0LdHSHP0sR30gGIbjoYT3BlbkFJsM7eHAocEkaOMdjXuFAD`,
       "Content-Type": "application/json",
     },
   };
@@ -29,17 +28,17 @@ export const sendOpenAi = async (messages, max = 100, temp = 1) => {
     const answer = res.data.choices[0].message.content;
     const usage = res?.data?.usage;
 
-    console.log(">>> " + answer);
-    console.log(
-      "TOKENS USED: " +
-        usage?.total_tokens +
-        " (prompt: " +
-        usage?.prompt_tokens +
-        " / response: " +
-        usage?.completion_tokens +
-        ")"
-    );
-    console.log("\n");
+    // console.log(">>> " + answer);
+    // console.log(
+    //   "TOKENS USED: " +
+    //     usage?.total_tokens +
+    //     " (prompt: " +
+    //     usage?.prompt_tokens +
+    //     " / response: " +
+    //     usage?.completion_tokens +
+    //     ")"
+    // );
+    // console.log("\n");
 
     return answer;
   } catch (e) {

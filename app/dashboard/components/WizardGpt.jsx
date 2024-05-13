@@ -15,7 +15,7 @@ const WizardGpt = () => {
       const messages = [{ role: "user", content: command }];
       const response = await sendOpenAi(messages, 50); // Adjust parameters as needed
       if (response) {
-        setOutputs([...outputs, response]);
+        setOutputs([response, ...outputs]);
         setCommand("");
         setError(null);
       } else {
