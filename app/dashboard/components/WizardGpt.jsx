@@ -1,20 +1,30 @@
 import React, { useState } from "react";
+import { sendOpenAi } from "@/libs/gpt";
 
 const WizardGpt = () => {
   const [command, setCommand] = useState("");
   const [outputs, setOutputs] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     setCommand(e.target.value);
   };
 
-  const handleExecuteCommand = () => {
-    // You can implement the logic to execute the command here
-    // For demonstration purposes, let's just add the command to the outputs array
-    setOutputs([command, ...outputs]);
-
-    // Reset command input after executing
-    setCommand("");
+  const handleExecuteCommand = async () => {
+    try {
+      const messages = [{ role: "user", content: command }];
+      const response = await sendOpenAi(messages, 50); // Adjust parameters as needed
+      if (response) {
+        setOutputs([...outputs, response]);
+        setCommand("");
+        setError(null);
+      } else {
+        setError("Error fetching response from OpenAI API. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error fetching response from OpenAI API:", error);
+      setError("Error fetching response from OpenAI API. Please try again.");
+    }
   };
 
   return (
@@ -37,6 +47,11 @@ const WizardGpt = () => {
           Send
         </button>
       </div>
+      {error && (
+        <div className="bg-red-100 text-red-600 px-4 py-2 rounded-md mb-4">
+          {error}
+        </div>
+      )}
       {outputs.length > 0 && (
         <>
           {outputs.map((output, index) => (

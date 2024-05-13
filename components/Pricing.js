@@ -4,6 +4,7 @@ import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
 import { useState, useEffect } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
+import "./style.css";
 
 // <Pricing/> displays the pricing plans for your app
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
