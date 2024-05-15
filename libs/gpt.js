@@ -17,7 +17,7 @@ export const sendOpenAi = async (messages, max = 100, temp = 1) => {
 
   const options = {
     headers: {
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer ${process.env.OPEN_API_KEY}`,
       "Content-Type": "application/json",
     },
   };
