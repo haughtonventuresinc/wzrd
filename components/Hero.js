@@ -2,7 +2,6 @@ import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
 import hero from "@/app/wizardgpt.gif";
-// import video from "../app/video.mp4";
 
 const Hero = () => {
   return (
@@ -25,15 +24,12 @@ const Hero = () => {
           <TestimonialsAvatars priority={true} />
         </div>
         <div className="lg:w-ful">
-          <video controls>
-            <source src={video}></source>
-          </video>
-          {/* <Image
+          <Image
             src={hero}
             alt="Product Demo"
             className="w-[600px]"
             priority={true}
-          /> */}
+          />
         </div>
       </div>
     </section>
