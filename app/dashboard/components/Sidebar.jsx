@@ -7,8 +7,8 @@ import config from "@/config";
 const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
   return (
     <nav
-      className={`fixed left-0 top-0 md:block h-full w-[200px] md:w-[300px] bg-black text-white transition-all duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "md:translate-x-0 -translate-x-full"
+      className={`fixed left-0 top-0 md:block h-full w-[200px] md:w-[300px] bg-white text-black transition-all duration-300 ease-in-out ${
+        isOpen ? "translate-x-0" : "md:translate-x-0 -translate-x-full shadow-2xl"
       }`}
     >
       <div className="pl-4 md:pl-10 pt-5">
@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
           <Image
             src={logo}
             alt={`${config.appName} logo`}
-            className="w-5 md:w-12"
+            className="w-5 md:w-12 bg-black rounded"
             placeholder="blur"
             priority={true}
             width={42}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { sendOpenAi } from "@/libs/gpt";
+import video from "../../wizardgpt.gif";
 
 const WizardGpt = () => {
   const [command, setCommand] = useState("");

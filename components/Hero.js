@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
-import hero from "@/app/hero.png";
+import hero from "@/app/wizardgpt.gif";
 
 const Hero = () => {
   return (
@@ -23,14 +23,12 @@ const Hero = () => {
 
           <TestimonialsAvatars priority={true} />
         </div>
-        <div className="lg:w-full">
+        <div className="lg:w-ful">
           <Image
             src={hero}
             alt="Product Demo"
-            className="w-full"
+            className="w-[600px]"
             priority={true}
-            width={500}
-            height={500}
           />
         </div>
       </div>
