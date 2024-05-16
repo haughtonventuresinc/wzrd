@@ -2,6 +2,7 @@
 
 import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 import "./style.css";
@@ -12,6 +13,8 @@ import "./style.css";
 
 const Pricing = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  const router = useRouter();
 
   const addPaypalScript = () => {
     if (window.paypal) {
@@ -124,12 +127,14 @@ const Pricing = () => {
                             details.payer.name.given_name
                         );
 
-                        //    return fetch("/paypal-transaction-complete", {
-                        //      method: "post",
-                        //      body: JSON.stringify({
-                        //        orderID: data.orderID,
-                        //      }),
-                        //    });
+                        return router.push("/dashboard");
+
+                        //  return fetch("/paypal-transaction-complete", {
+                        //    method: "post",
+                        //    body: JSON.stringify({
+                        //      orderID: data.orderID,
+                        //    }),
+                        //  });
                       }}
                     />
                   ) : (

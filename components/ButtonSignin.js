@@ -14,7 +14,7 @@ const ButtonSignin = ({ text = "Get started", extraStyle }) => {
   const { data: session, status } = useSession();
 
   const handleClick = () => {
-    router.push(config.auth.callbackUrl);
+    router.push("/#pricing");
     // if (!status === "authenticated") {
     //   router.push(config.auth.callbackUrl);
     // } else {
