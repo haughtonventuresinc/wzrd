@@ -8,7 +8,9 @@ const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
   return (
     <nav
       className={`fixed left-0 top-0 md:block h-full w-[200px] md:w-[300px] bg-white text-black transition-all duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "md:translate-x-0 -translate-x-full shadow-2xl"
+        isOpen
+          ? "translate-x-0"
+          : "md:translate-x-0 -translate-x-full shadow-2xl"
       }`}
     >
       <div className="pl-4 md:pl-10 pt-5">

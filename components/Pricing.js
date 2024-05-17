@@ -1,19 +1,13 @@
 "use client";
 
 import config from "@/config";
-import ButtonCheckout from "./ButtonCheckout";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 import "./style.css";
 
-// <Pricing/> displays the pricing plans for your app
-// It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
-// <ButtonCheckout /> renders a button that will redirect the user to Stripe checkout called the /api/stripe/create-checkout API endpoint with the correct priceId
-
 const Pricing = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
-
   const router = useRouter();
 
   const addPaypalScript = () => {
@@ -35,6 +29,13 @@ const Pricing = () => {
     addPaypalScript();
   }, []);
 
+  // useEffect(() => {
+  //   const buyerName = localStorage.getItem("buyerName");
+  //   if (buyerName) {
+  //     router.push("/dashboard");
+  //   }
+  // }, []);
+
   return (
     <section className="bg-white overflow-hidden" id="pricing">
       <div className="py-24 px-8 max-w-5xl mx-auto">
@@ -42,9 +43,6 @@ const Pricing = () => {
           <p className="font-bold text-3xl lg:text-5xl text-black mb-8">
             Pricing
           </p>
-          {/* <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
-            Save hours of repetitive code and ship faster!
-          </h2> */}
         </div>
 
         <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
@@ -109,15 +107,12 @@ const Pricing = () => {
                             clipRule="evenodd"
                           />
                         </svg>
-
                         <span>{feature.name}</span>
                       </li>
                     ))}
                   </ul>
                 )}
                 <div className="space-y-2">
-                  {/* <ButtonCheckout priceId={plan.priceId} /> */}
-                  {console.log("paypal loaded>>>>>>>>>>")}
                   {scriptLoaded ? (
                     <PayPalButton
                       amount={plan.price}
@@ -126,15 +121,13 @@ const Pricing = () => {
                           "Transaction completed by " +
                             details.payer.name.given_name
                         );
-
-                        return router.push("/dashboard");
-
-                        //  return fetch("/paypal-transaction-complete", {
-                        //    method: "post",
-                        //    body: JSON.stringify({
-                        //      orderID: data.orderID,
-                        //    }),
-                        //  });
+                        localStorage.setItem(
+                          "buyerName",
+                          details.payer.name.given_name
+                        );
+                        {
+                          router.push("/dashboard");
+                        }
                       }}
                     />
                   ) : (
