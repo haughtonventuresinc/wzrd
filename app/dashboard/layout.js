@@ -11,17 +11,17 @@ export default function LayoutPrivate({ children }) {
     setIsClient(true);
 
     if (typeof window !== "undefined") {
-      const buyerName = localStorage.getItem("buyerName");
-      if (!buyerName) {
+      const loginStatus = localStorage.getItem("loginStatus");
+      if (loginStatus !== "200") {
         router.push("/#pricing");
       }
     }
   }, [router]);
 
-  // Only render children if `localStorage` is accessible and buyerName exists
+  // Only render children if `localStorage` is accessible and loginStatus is valid
   if (!isClient || typeof window === "undefined") {
     return null;
   }
 
-  return <>{localStorage.getItem("buyerName") ? children : null}</>;
+  return <>{localStorage.getItem("loginStatus") === "200" ? children : null}</>;
 }
