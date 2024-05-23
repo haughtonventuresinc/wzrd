@@ -36,6 +36,32 @@ const Pricing = () => {
   //   }
   // }, []);
 
+  const handlePaymentSuccess = async (details, data) => {
+    const email = details.payer.email_address;
+    const givenName = details.payer.name.given_name;
+
+    // Display an alert with the payer's given name
+    alert(`Transaction completed by ${givenName}`);
+
+    // Store the payer's given name in local storage
+    localStorage.setItem("buyerName", givenName);
+
+    // Optional: Store additional transaction details in local storage
+    localStorage.setItem("payerEmail", email);
+
+    // Make an Axios call to save the email address in the database
+    try {
+      await axios.post("http://13.210.212.120:3001/api/v1/pricing/save", {
+        email,
+      });
+    } catch (error) {
+      console.error("Error saving email to database:", error);
+    }
+
+    // Navigate to the dashboard
+    router.push("/login");
+  };
+
   return (
     <section className="bg-white overflow-hidden" id="pricing">
       <div className="py-24 px-8 max-w-5xl mx-auto">
@@ -116,19 +142,7 @@ const Pricing = () => {
                   {scriptLoaded ? (
                     <PayPalButton
                       amount={plan.price}
-                      onSuccess={(details) => {
-                        alert(
-                          "Transaction completed by " +
-                            details.payer.name.given_name
-                        );
-                        localStorage.setItem(
-                          "buyerName",
-                          details.payer.name.given_name
-                        );
-                        {
-                          router.push("/dashboard");
-                        }
-                      }}
+                      onSuccess={handlePaymentSuccess}
                     />
                   ) : (
                     <span>Loading....</span>
