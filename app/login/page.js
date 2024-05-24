@@ -10,8 +10,8 @@ export default function Home() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        "http://13.210.212.120:3001/api/v1/pricing/",
+      const response = await axios.get(
+        "https://backend.indexwzrd.com/api/v1/pricing",
         {
           email,
         }
