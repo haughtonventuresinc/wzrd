@@ -52,7 +52,7 @@ const Pricing = () => {
 
     // Make an Axios call to save the email address in the database
     try {
-      await axios.post("http://13.210.212.120:3001/api/v1/pricing/save", {
+      await axios.post("https://backend.indexwzrd.com/api/v1/pricing/save", {
         email,
       });
     } catch (error) {
