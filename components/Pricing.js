@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 import "./style.css";
+import axios from "axios";
 
 const Pricing = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);

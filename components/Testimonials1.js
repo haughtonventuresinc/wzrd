@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// A beautiful single testimonial with a user name and and company logo logo
 const Testimonial = () => {
   return (
     <section
