@@ -11,7 +11,7 @@ export default function Home() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "https://backend.indexwzrd.com/api/v1/pricing/",
+        "https://backend.indexwzrd.com/api/v1/pricing/save",
         {
           email,
         }
