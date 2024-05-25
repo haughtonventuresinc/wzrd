@@ -59,7 +59,6 @@ const Pricing = () => {
       console.error("Error saving email to database:", error);
     }
 
-    // Navigate to the dashboard
     router.push("/login");
   };
 
