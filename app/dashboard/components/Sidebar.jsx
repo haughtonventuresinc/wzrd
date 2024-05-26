@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/icon.png";
 import config from "@/config";
+import ButtonSignout from "@/components/ButtonSignout";
 
 const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
   return (
@@ -55,7 +56,12 @@ const Sidebar = ({ isOpen, toggleSidebar, setActiveContent }) => {
         <li className="my-4">
           <button onClick={() => setActiveContent("algos")}>Algos</button>
         </li>
+        <li className="" style={{position:"absolute", bottom:"10px"}}>
+        <ButtonSignout/>
+        </li>
       </ul>
+      <div>
+      </div>
     </nav>
   );
 };
