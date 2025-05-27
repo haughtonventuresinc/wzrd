@@ -31,14 +31,20 @@ export default function Home() {
       const callbackUrl = "/dashboard";
       
       setSuccessMessage("Checking user account...");
+      setError(""); // Clear any previous errors
+      
+      // For debugging on Vercel
+      console.log("Attempting to check user with email:", email);
       
       // Check if the user exists in MongoDB or create them
       const checkUserResponse = await axios.post("/api/auth/check-user", {
         email,
       }, {
         // Set a timeout for the request
-        timeout: 10000 // 10 seconds
+        timeout: 15000 // 15 seconds
       });
+      
+      console.log("API Response:", checkUserResponse.data);
       
       if (checkUserResponse.data.success) {
         // Store the email in localStorage for persistence
@@ -47,35 +53,60 @@ export default function Home() {
         setSuccessMessage("User verified successfully, signing in...");
         console.log("User verified successfully, now signing in...");
         
-        // Sign in with credentials and force redirect
-        await signIn("credentials", {
-          email,
-          redirect: true,
-          callbackUrl: callbackUrl
-        });
-        
-        // The above should redirect, but just in case it doesn't
-        // we'll add a manual redirect after a short delay
-        setTimeout(() => {
-          console.log("Fallback redirect to dashboard");
+        // Use a more direct approach for authentication
+        try {
+          // Sign in with credentials and force redirect
+          const signInResult = await signIn("credentials", {
+            email,
+            redirect: false, // Don't redirect automatically
+          });
+          
+          console.log("Sign in result:", signInResult);
+          
+          if (signInResult?.error) {
+            setError("Authentication failed: " + signInResult.error);
+            setIsLoading(false);
+            return;
+          }
+          
+          // Manual redirect after successful sign in
+          console.log("Authentication successful, redirecting to dashboard");
           window.location.href = callbackUrl;
-        }, 1000);
-        
-        return; // Early return since we're redirecting
+          return;
+        } catch (signInError) {
+          console.error("Sign in error:", signInError);
+          setError("Error during sign in. Please try again.");
+          setIsLoading(false);
+          return;
+        }
       } else {
-        setError("Email not found in our database. Please try again or contact support.");
+        setError(checkUserResponse.data.message || "Email not found in our database. Please try again or contact support.");
       }
     } catch (error) {
       console.error("Login failed", error);
       
-      // Check if it's a timeout error
-      if (error.code === "ECONNABORTED" || (error.response && error.response.status === 504)) {
-        setError("Database connection timed out. This might be due to slow internet or server issues. Please try again.");
-      } else if (error.response && error.response.data && error.response.data.message) {
-        // Use the error message from the server if available
-        setError(error.response.data.message);
+      // Detailed error handling
+      if (error.code === "ECONNABORTED") {
+        setError("Request timed out. The server took too long to respond. Please try again.");
+      } else if (error.response) {
+        // The server responded with an error status
+        console.log("Error response data:", error.response.data);
+        
+        if (error.response.status === 500) {
+          setError("Server error. This might be due to database connection issues. Please try again later.");
+        } else if (error.response.data && error.response.data.message) {
+          setError(error.response.data.message);
+        } else if (error.response.data && error.response.data.error) {
+          setError(error.response.data.error);
+        } else {
+          setError(`Server error (${error.response.status}). Please try again later.`);
+        }
+      } else if (error.request) {
+        // The request was made but no response was received
+        setError("No response from server. Please check your internet connection and try again.");
       } else {
-        setError("An unexpected error occurred. Please try again.");
+        // Something else caused the error
+        setError("An unexpected error occurred: " + error.message);
       }
     } finally {
       setIsLoading(false);
