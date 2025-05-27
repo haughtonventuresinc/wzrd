@@ -25,14 +25,13 @@ const config = {
             : "price_456",
         name: "Advanced Plan",
         description: "Premium Member",
-        price: 57,
-        priceAnchor: 189,
+        price: 89.99,
+        priceAnchor: 199.99,
         features: [
           {
             name: "Daily Market Forecast",
           },
           { name: "Daily Price Targets" },
-          { name: "Buy & Sell Signals ( Algorithm )" },
           {
             name: "24/7 customer support to assist with any queries or issues.",
           },
