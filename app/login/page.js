@@ -50,7 +50,8 @@ export default function Home() {
       
       try {
         // Use local backend for testing
-const BACKEND_API = "https://index-wizard-backend.onrender.com";
+// Use the correct backend URL
+const BACKEND_API = process.env.NODE_ENV === 'production' ? 'https://index-wzrdbackend-production.up.railway.app' : 'http://localhost:3001';
         const response = await axios.post(`${BACKEND_API}/api/v1/users/reset-password`, {
           token: resetToken,
           password: newPassword
@@ -80,7 +81,8 @@ const BACKEND_API = "https://index-wizard-backend.onrender.com";
     if (forgotPassword && !resetToken) {
       try {
         // Use local backend for testing
-const BACKEND_API = "https://index-wizard-backend.onrender.com";
+// Use the correct backend URL
+const BACKEND_API = process.env.NODE_ENV === 'production' ? 'https://index-wzrdbackend-production.up.railway.app' : 'http://localhost:3001';
         const response = await axios.post(`${BACKEND_API}/api/v1/users/forgot-password`, {
           email
         }, {
@@ -104,7 +106,8 @@ const BACKEND_API = "https://index-wizard-backend.onrender.com";
     
     try {
       // Use local backend for testing
-const BACKEND_API = "https://index-wizard-backend.onrender.com";
+// Use the correct backend URL
+const BACKEND_API = process.env.NODE_ENV === 'production' ? 'https://index-wzrdbackend-production.up.railway.app' : 'http://localhost:3001';
       
       // Login mode
       if (isLoginMode) {

@@ -10,8 +10,9 @@ const Algos = () => {
     const fetchMarketData = async () => {
       try {
         setLoading(true);
-        // Fetch data from the deployed backend API
-        const response = await fetch('https://index-wizard-backend.onrender.com/api/v1/algos/market-data');
+        // Use the correct backend URL
+        const BACKEND_API = process.env.NODE_ENV === 'production' ? 'https://index-wzrdbackend-production.up.railway.app' : 'http://localhost:3001';
+        const response = await fetch(`${BACKEND_API}/api/v1/algos/market-data`);
         
         if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.status}`);
