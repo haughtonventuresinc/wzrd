@@ -23,8 +23,8 @@ export const authOptions = {
         }
         
         try {
-          // Use the backend API for authentication
-          const BACKEND_API = "https://index-wzrdbackend-production.up.railway.app";
+          // Use the local backend API for testing
+          const BACKEND_API = "https://index-wizard-backend.onrender.com";
           
           const response = await axios.post(`${BACKEND_API}/api/v1/users/login`, {
             email: credentials.email,
@@ -72,6 +72,13 @@ export const authOptions = {
     async signIn({ user, account, profile, email, credentials }) {
       // Allow sign in if the user exists or is being created
       return true;
+    },
+    async redirect({ url, baseUrl }) {
+      // Allows relative callback URLs
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // Allows callback URLs on the same origin
+      else if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
     },
   },
   pages: {
