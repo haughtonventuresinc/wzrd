@@ -30,15 +30,21 @@ export default function Home() {
       // Define the callback URL
       const callbackUrl = "/dashboard";
       
+      setSuccessMessage("Checking user account...");
+      
       // Check if the user exists in MongoDB or create them
       const checkUserResponse = await axios.post("/api/auth/check-user", {
         email,
+      }, {
+        // Set a timeout for the request
+        timeout: 10000 // 10 seconds
       });
       
       if (checkUserResponse.data.success) {
         // Store the email in localStorage for persistence
         localStorage.setItem("userEmail", email);
         
+        setSuccessMessage("User verified successfully, signing in...");
         console.log("User verified successfully, now signing in...");
         
         // Sign in with credentials and force redirect
@@ -61,7 +67,16 @@ export default function Home() {
       }
     } catch (error) {
       console.error("Login failed", error);
-      setError("An unexpected error occurred. Please try again.");
+      
+      // Check if it's a timeout error
+      if (error.code === "ECONNABORTED" || (error.response && error.response.status === 504)) {
+        setError("Database connection timed out. This might be due to slow internet or server issues. Please try again.");
+      } else if (error.response && error.response.data && error.response.data.message) {
+        // Use the error message from the server if available
+        setError(error.response.data.message);
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }

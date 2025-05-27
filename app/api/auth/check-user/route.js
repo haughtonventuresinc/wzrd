@@ -1,6 +1,16 @@
 import clientPromise from "@/libs/mongo";
 import { NextResponse } from "next/server";
 
+// Helper function with timeout
+const connectWithTimeout = async (timeoutMs = 5000) => {
+  return Promise.race([
+    clientPromise,
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('MongoDB connection timeout')), timeoutMs)
+    )
+  ]);
+};
+
 export async function POST(request) {
   try {
     const { email } = await request.json();
@@ -12,13 +22,19 @@ export async function POST(request) {
       );
     }
 
-    // Connect to MongoDB
-    const client = await clientPromise;
+    // Connect to MongoDB with timeout
+    const client = await connectWithTimeout();
     const db = client.db();
     const usersCollection = db.collection("users");
 
-    // Check if user exists
-    const existingUser = await usersCollection.findOne({ email });
+    // Check if user exists with timeout
+    const findPromise = usersCollection.findOne({ email });
+    const existingUser = await Promise.race([
+      findPromise,
+      new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('MongoDB query timeout')), 3000)
+      )
+    ]);
 
     if (existingUser) {
       console.log(`User found with email: ${email}`);
@@ -34,7 +50,14 @@ export async function POST(request) {
         createdAt: new Date(),
       };
 
-      const result = await usersCollection.insertOne(newUser);
+      const insertPromise = usersCollection.insertOne(newUser);
+      const result = await Promise.race([
+        insertPromise,
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('MongoDB insert timeout')), 3000)
+        )
+      ]);
+      
       console.log(`Created new user with email: ${email}`);
 
       return NextResponse.json(
@@ -44,6 +67,15 @@ export async function POST(request) {
     }
   } catch (error) {
     console.error("Error checking/creating user:", error);
+    
+    // Check if it's a timeout error
+    if (error.message && error.message.includes('timeout')) {
+      return NextResponse.json(
+        { success: false, message: "Database connection timed out. Please try again." },
+        { status: 504 }
+      );
+    }
+    
     return NextResponse.json(
       { success: false, message: "Server error" },
       { status: 500 }
