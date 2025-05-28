@@ -30,7 +30,7 @@ const Hero = () => {
 
           <TestimonialsAvatars priority={true} />
         </div>
-        {/* App demo removed as requested */}
+        {/* Demo section moved below pricing */}
       </div>
     </section>
   );

@@ -24,15 +24,14 @@ const CTA = () => {
         </h2>
         <div style={{ 
           position: "relative", 
-          boxSizing: "content-box", 
-          maxHeight: "80vh", 
+          boxSizing: "content-box",
           width: "100%", 
           aspectRatio: "2.2159763313609466", 
           margin: "0 auto",
           boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)",
           borderRadius: "8px",
           overflow: "hidden"
-        }}>
+        }} className="md:h-[80vh] h-[85vh]">
           <iframe 
             src="https://app.supademo.com/embed/cmb8ctg2n04t7sn1rrovk1sea?embed_v=2" 
             loading="lazy" 
