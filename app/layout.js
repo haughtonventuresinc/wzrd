@@ -4,6 +4,7 @@ import { getSEOTags } from "@/libs/seo";
 import ClientLayout from "@/components/LayoutClient";
 import config from "@/config";
 import "./globals.css";
+import Script from "next/script";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,15 @@ export default function RootLayout({ children }) {
         </head>
       )}
       <body>
+        {/* DataFast analytics tracking script */}
+        <Script
+          defer
+          data-website-id="683678edf2ef4853c0b7a601"
+          data-domain="indexwizard.xyz"
+          src="https://datafa.st/js/script.js"
+          strategy="afterInteractive"
+        />
+        
         {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
         <ClientLayout>{children}</ClientLayout>
       </body>
