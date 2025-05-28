@@ -30,14 +30,7 @@ const Hero = () => {
 
           <TestimonialsAvatars priority={true} />
         </div>
-        <div className="lg:w-ful">
-          <Image
-            src={hero}
-            alt="Product Demo"
-            className="w-100"
-            priority={true}
-          />
-        </div>
+        {/* App demo removed as requested */}
       </div>
     </section>
   );
