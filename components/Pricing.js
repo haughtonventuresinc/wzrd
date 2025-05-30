@@ -2,64 +2,16 @@
 
 import config from "@/config";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { PayPalButton } from "react-paypal-button-v2";
+import { useState } from "react";
 import "./style.css";
 import axios from "axios";
 
 const Pricing = () => {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
   const router = useRouter();
-
-  const addPaypalScript = () => {
-    if (window.paypal) {
-      setScriptLoaded(true);
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src =
-      "https://www.paypal.com/sdk/js?client-id=Ac_Y6w5AyvIjDM7uTK2ksmdQ4nuYHJEgTY4xjI91I8wv-3zKPkmhcPE2MkmXd7okZzxCeJkrUiS3Jt68";
-    script.type = "text/javascript";
-    script.async = true;
-    script.onload = () => setScriptLoaded(true);
-    document.body.appendChild(script);
-  };
-
-  useEffect(() => {
-    addPaypalScript();
-  }, []);
-
-  // useEffect(() => {
-  //   const buyerName = localStorage.getItem("buyerName");
-  //   if (buyerName) {
-  //     router.push("/dashboard");
-  //   }
-  // }, []);
-
-  const handlePaymentSuccess = async (details, data) => {
-    const email = details.payer.email_address;
-    const givenName = details.payer.name.given_name;
-
-    // Display an alert with the payer's given name
-    alert(`Transaction completed by ${givenName}`);
-
-    // Store the payer's given name in local storage
-    localStorage.setItem("buyerName", givenName);
-
-    // Optional: Store additional transaction details in local storage
-    localStorage.setItem("payerEmail", email);
-
-    // Make an Axios call to save the email address in the database
-    try {
-      await axios.post("https://backend.indexwzrd.com/api/v1/pricing/save", {
-        email,
-      });
-    } catch (error) {
-      console.error("Error saving email to database:", error);
-    }
-
-    router.push("/login");
+  
+  const handleWhopCheckout = () => {
+    // Redirect to the Whop checkout page
+    window.location.href = "https://whop.com/checkout/2bu4ZgUpJwC6XTVYpX-mvRO-75hr-bN1T-iJ16OmZD81ev/";
   };
 
   return (
@@ -139,14 +91,12 @@ const Pricing = () => {
                   </ul>
                 )}
                 <div className="space-y-2">
-                  {scriptLoaded ? (
-                    <PayPalButton
-                      amount={plan.price}
-                      onSuccess={handlePaymentSuccess}
-                    />
-                  ) : (
-                    <span>Loading....</span>
-                  )}
+                  <button
+                    onClick={handleWhopCheckout}
+                    className="btn btn-primary btn-block"
+                  >
+                    Subscribe Now
+                  </button>
                   <p className="flex items-center justify-center gap-2 text-sm text-center text-black font-medium relative">
                     Monthly Charges
                   </p>
