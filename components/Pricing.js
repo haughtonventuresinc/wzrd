@@ -2,16 +2,26 @@
 
 import config from "@/config";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import { getTrackingParams, addTrackingParams } from "@/libs/analytics";
 
 const Pricing = () => {
   const router = useRouter();
   
   const handleWhopCheckout = () => {
-    // Redirect to the Whop checkout page
-    window.location.href = "https://whop.com/checkout/2bu4ZgUpJwC6XTVYpX-mvRO-75hr-bN1T-iJ16OmZD81ev/";
+    // Get current tracking parameters from URL
+    const trackingParams = getTrackingParams();
+    
+    // Add tracking parameters to the Whop checkout URL
+    const whopCheckoutUrl = addTrackingParams(
+      "https://whop.com/checkout/2bu4ZgUpJwC6XTVYpX-mvRO-75hr-bN1T-iJ16OmZD81ev/",
+      trackingParams
+    );
+    
+    // Redirect to the Whop checkout page with tracking parameters
+    window.location.href = whopCheckoutUrl;
   };
 
   return (

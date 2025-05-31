@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
 import config from "@/config";
+import TrackingLink from "./TrackingLink";
 
 const links = [
   {
@@ -44,7 +44,7 @@ const Header = () => {
       >
         {/* Your logo/name on large screens */}
         <div className="flex lg:flex-1">
-          <Link
+          <TrackingLink
             className="flex items-center gap-2 shrink-0 "
             href="/"
             title={`${config.appName} hompage`}
@@ -59,7 +59,7 @@ const Header = () => {
               height={42}
             />
             <span className="font-extrabold text-lg">{config.appName}</span>
-          </Link>
+          </TrackingLink>
         </div>
         {/* Burger button to open menu on mobile */}
         <div className="flex lg:hidden">
@@ -89,14 +89,14 @@ const Header = () => {
         {/* Your links on large screens */}
         <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
           {links.map((link) => (
-            <Link
+            <TrackingLink
               href={link.href}
               key={link.href}
               className="link link-hover"
               title={link.label}
             >
               {link.label}
-            </Link>
+            </TrackingLink>
           ))}
         </div>
 
@@ -111,7 +111,7 @@ const Header = () => {
         >
           {/* Your logo/name on small screens */}
           <div className="flex items-center justify-between">
-            <Link
+            <TrackingLink
               className="flex items-center gap-2 shrink-0 "
               title={`${config.appName} hompage`}
               href="/"
@@ -126,7 +126,7 @@ const Header = () => {
                 height={60}
               />
               <span className="font-extrabold text-lg">{config.appName}</span>
-            </Link>
+            </TrackingLink>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5"
@@ -155,14 +155,14 @@ const Header = () => {
             <div className="py-4">
               <div className="flex flex-col gap-y-4 items-start">
                 {links.map((link) => (
-                  <Link
+                  <TrackingLink
                     href={link.href}
                     key={link.href}
                     className="link link-hover"
                     title={link.label}
                   >
                     {link.label}
-                  </Link>
+                  </TrackingLink>
                 ))}
               </div>
             </div>

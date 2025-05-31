@@ -4,10 +4,9 @@ import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
 import hero from "@/app/wizardgpt.gif";
-import { useRouter } from "next/navigation";
+import TrackingLink from "./TrackingLink";
 
 const Hero = () => {
-  const router = useRouter();
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto text-black flex flex-col items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
@@ -21,12 +20,13 @@ const Hero = () => {
             minutes, optimize your trading decisions and stay ahead of the
             market.
           </p>
-          <button
-            className="btn bg-black btn-wide text-white hover:text-black"
-            onClick={() => router.push("/#pricing")}
-          >
-            Join {config.appName}
-          </button>
+          <TrackingLink href="/#pricing">
+            <button
+              className="btn bg-black btn-wide text-white hover:text-black"
+            >
+              Join {config.appName}
+            </button>
+          </TrackingLink>
 
           <TestimonialsAvatars priority={true} />
         </div>
